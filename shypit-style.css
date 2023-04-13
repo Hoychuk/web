@@ -22,7 +22,6 @@ body {
 /* стилизуем кнопку */
 .menu__btn {
   	display: flex; /* используем flex для центрирования содержимого */
-  	align-items: center;  /* центрируем содержимое кнопки */
   	position: fixed;
   	width: 26px;
   	height: 26px;
