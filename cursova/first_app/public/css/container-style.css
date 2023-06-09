@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:wght@600&display=swap');
+
+body {
+	padding: 0;
+	background: #ffffff url("img/Mizhgirja 1.jpg") no-repeat 50% 0;
+	background-size: cover;
+}
+
+.flex-container{
+	display: flex;
+	justify-content: space-between;
+	padding: 40px 120px 60px;
+	transition: 1s all;
+}
+
+
+/* скрываем чекбокс */
+#menu__toggle {
+  	opacity: 0;
+}
+
+/* стилизуем кнопку */
+.menu__btn {
+  	display: flex; /* используем flex для центрирования содержимого */
+  	position: fixed;
+  	width: 26px;
+  	height: 26px;
+  	cursor: pointer;
+  	z-index: 1;
+}
+
+/* добавляем "гамбургер" */
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  	display: block;
+  	position: absolute;
+  	width: 100%;
+  	height: 2px;
+  	background-color: #311E10;
+}
+
+.menu__btn > span::before {
+  	content: '';
+  	top: -8px;
+}
+
+.menu__btn > span::after {
+  	content: '';
+  	top: 8px;
+}
+
+/* контейнер меню */
+.menu__box {
+  	display: block;
+  	position: fixed;
+  	visibility: hidden;
+  	top: 0;
+  	left: -100%;
+  	width: 300px;
+  	height: 100%;
+  	margin: 0;
+  	padding: 60px 0;
+  	list-style: none;
+  	text-align: center;
+  	background-color: #ECEFF1;
+  	box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+}
+/* элементы меню */
+.menu__item {
+  	display: block;
+  	padding: 12px 24px;
+  	color: #F85E00;
+  	font-family: 'Playfair Display', serif;
+  	font-size: 20px;
+  	font-weight: 600;
+  	text-decoration: none;
+}
+.menu__item:hover {
+  	background-color: #CFD8DC;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  visibility: visible;
+  left: 0;
+}
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  transition-duration: .25s;
+}
+.menu__box {
+  transition-duration: .25s;
+}
+.menu__item {
+  transition-duration: .25s;
+}
+
+h1{
+	font-family: "Playfair Display", serif;
+	font-size: 64px;
+	line-height: 60px;
+	color: #ffffff;
+	padding-left: 120px;
+	padding-bottom: 30px;
+	font-weight: 600;
+	transition: 1s all;
+}
+
+h2{
+	font-family: "Montserrat", sans-serif;
+	font-size: 22px;
+	line-height: 30px;
+	color: #ffffff;
+	padding-left: 120px;
+	padding-bottom: 77px;
+	font-weight: 100;
+	transition: 1s all;
+}
+
+
+.fast-icons{
+	padding-left: 120px;
+	display: flex;
+	justify-content: space-between;
+	width: 1200px;
+	flex-wrap: wrap;
+	transition: 1s all;
+}
+
+.image{
+	width: 370px;
+	height: 207px;
+	padding-right: 25px;
+	padding-top: 15px;
+}
+
+.subscribe{
+	flex-direction: column;
+	padding-left: 120px;
+	padding-top: 75px;
+	font-family: "Playfair Display", serif;
+	font-size: 15px;
+	width: 205px;
+	color: #ffffff;
+	font-weight: 600;
+
+}
+
+.subscribe-icons{
+	display: flex;
+	justify-content: space-between;
+}
+
+@media (max-width: 1320px){
+	.fast-icons{
+		width:800px
+	}
+}
+
+@media (max-width: 1200px){
+	.flex-container {
+		padding-left: 100px;
+		padding-bottom: 73px;
+		padding-right: 100px;
+	}
+
+	.prapor{
+		width: 80px;
+		height: 53px;
+	}
+
+	h1{
+		padding-left: 100px;
+		font-size: 58px;
+	}
+
+	h2{
+		padding-left: 100px;
+		font-size: 19px;
+		padding-bottom: 0;
+	}
+
+	.subscribe{
+		font-size: 13px;
+		width: 180px;
+		padding-left: 100px;
+		padding-top: 60px;
+		padding: 60px 100px 40px;
+	}
+
+	.icons{
+		width: 32px;
+		height: 32px;
+	}
+
+	.fast-icons{
+		width: 950px;
+		padding-top: 40px;
+		padding-left: 100px;
+	}
+
+	.image{
+		width: 290px;
+		height: 165px;
+		padding-right: 15px;
+	}
+}
+
+@media (max-width: 1050px){
+	.fast-icons{
+		width:750px
+	}
+}
+
+@media(max-width: 992px){
+	.flex-container {
+		padding-left: 90px;
+		padding-bottom: 73px;
+		padding-right: 90px;
+	}
+
+	.prapor{
+		width: 70px;
+		height: 50px;
+	}
+
+	h1{
+		padding-left: 90px;
+		font-size: 50px;
+	}
+
+	h2{
+		padding-left: 100px;
+		font-size: 16px;
+	}
+
+	.subscribe{
+		font-size: 12px;
+		width: 165px;
+		padding-left: 100px;
+
+	}
+
+	.icons{
+		width: 28px;
+		height: 28px;
+	}
+
+	.fast-icons{
+		width: 650px;
+		padding-top: 60px;
+	}
+
+	.image{
+		width: 250px;
+		height: 150px;
+	}
+}
+
+@media (max-width: 768px){
+
+	.flex-container {
+		padding: 53px 70px 46px;
+	}
+
+	.prapor{
+		width: 66px;
+		height: 44px;
+	}
+
+	.menu__btn{
+		width: 26px;
+		height: 26px;
+	}
+
+	h1{
+		padding-left: 70px;
+		font-size: 42px;
+		width: 400px;
+		line-height: 46px;
+	}
+
+	h2{
+		padding-left: 70px;
+		font-size: 21px;
+		width: 278px;
+		line-height: 18px;
+	}
+
+	.subscribe{
+		font-size: 18px;
+		width: 254px;
+		padding-left: 70px;
+		padding-top: 60px;
+	}
+
+	.icons{
+		width: 45px;
+		height: 45px;
+	}
+
+	.fast-icons{
+		width: 400px;
+		padding-top: 48px;
+		flex-wrap: nowrap;
+		padding-left: 70px;
+		flex-direction: column;
+	}
+
+	.image{
+		width: 333px;
+		height: 186px;
+		padding-bottom: 26px;
+	}
+
+}
+
+@media (max-width: 576px){
+
+	.flex-container {
+		padding: 40px 42px 35px;
+	}
+
+	.prapor{
+		width: 50px;
+		height: 33px;
+	}
+
+	.menu__btn{
+		width: 20px;
+		height: 20px;
+	}
+
+	.menu__box{
+		width: 250px;
+	}
+
+	h1{
+		padding-left: 42px;
+		font-size: 32px;
+		width: 280px;
+		line-height: 35px;
+	}
+
+	h2{
+		padding-left: 42px;
+		font-size: 16px;
+		width: 209px;
+		line-height: 18px;
+	}
+
+	.subscribe{
+		font-size: 14px;
+		width: 191px;
+		padding-left: 42px;
+		padding-top: 10px;
+	}
+
+	.icons{
+		width: 34px;
+		height: 34px;
+	}
+
+	.fast-icons{
+		width: 364.5px;
+		padding-top: 60px;
+		flex-direction: column;
+		padding-left: 42px;
+	}
+
+	.image{
+		width: 250px;
+		height: 140px;
+		padding-bottom: 20px;
+	}
+
+}
